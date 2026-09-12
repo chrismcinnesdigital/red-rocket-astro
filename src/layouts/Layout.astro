@@ -1,3 +1,7 @@
+---
+import GlobalNav from "../components/GlobalNav.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -9,6 +13,7 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<GlobalNav />
 		<slot />
 	</body>
 </html>
@@ -17,6 +22,7 @@
 	html,
 	body {
 		margin: 0;
+		padding: 1rem;
 		width: 100%;
 		height: 100%;
 	}

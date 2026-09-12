@@ -1,6 +1,7 @@
 ---
 import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
+import GlobalNav from "./GlobalNav.astro";
 ---
 
 <div id="container">
@@ -8,9 +9,8 @@ import background from "../assets/background.svg";
   <main>
     <section id="hero">
       <a href="https://astro.build"><img src={astroLogo.src} width="50%" height="auto" alt="Astro Homepage" /></a>
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/journal/">Journal</a>
+
+	      <GlobalNav />
 
 	  <h1>This is the start of my Astro journey.</h1>
       <section id="links">

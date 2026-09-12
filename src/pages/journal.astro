@@ -1,9 +1,24 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
----
+import GlobalNav from "../components/GlobalNav.astro";
+const pageTitle = "Journal";
 
-<Layout>
-  <h1>Journal</h1>
-  <Welcome />
-</Layout>
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+
+  </head>
+  <body>
+    <GlobalNav />
+
+    <h1>My Astro Learning Journal</h1>
+    <p>This is where I will post about my journey learning Astro.</p>
+    <ul>
+      <li><a href="/journal/journal-1/">Journal Post 1</a></li>
+      <li><a href="/journal/journal-2/">Journal Post 2</a></li>
+      <li><a href="/journal/journal-3/">Journal Post 3</a></li>
+    </ul>
+  </body>
+</html>
