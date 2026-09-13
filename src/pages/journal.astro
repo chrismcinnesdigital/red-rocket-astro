@@ -1,28 +1,13 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
-const pageTitle = "Journal";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "The Red Rocket Journal";
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
 
-  </head>
-  <body>
-    <Header />
-
-    <h1>My Astro Learning Journal</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-      <li><a href="/journal/journal-1/">Journal Post 1</a></li>
-      <li><a href="/journal/journal-2/">Journal Post 2</a></li>
-      <li><a href="/journal/journal-3/">Journal Post 3</a></li>
-    </ul>
-    <Footer />
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    <li><a href="/journal/journal-1/">Journal Post 1</a></li>
+    <li><a href="/journal/journal-2/">Journal Post 2</a></li>
+    <li><a href="/journal/journal-3/">Journal Post 3</a></li>
+  </ul>
+</BaseLayout>
