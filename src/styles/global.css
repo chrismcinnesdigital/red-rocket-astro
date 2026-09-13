@@ -18,6 +18,7 @@ body {
 
 .container {
   margin: 0 auto;
+  padding: 3rem 0;
   width: calc(100% - 2rem);
   max-width: 80rem;
 }
@@ -25,68 +26,4 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
-}
-
-/* nav styles */
-.menu {
-  background-color: oklab(20% 0 0 / 0.30);
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 5px 10px;
-}
-
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}
-
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 5px 0;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: .07ch;
-  color: #0d0950;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  color: white;
-  background-color: oklab(20% 0 0 / 0.25);
-}
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
-}
-
-@media screen and (min-width: 636px) {
-  .nav-links {
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 6px 10px;
-    background: none;
-    border-radius: 4px;
-  }
-
-  .nav-links {
-    display: flex;
-    column-gap: 1rem;
-  }
-
-  .menu {
-    display: none;
-  }
 }

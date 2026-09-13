@@ -2,7 +2,7 @@
 import Social from "./Social.astro";
 ---
 
-<style>
+<style is:global>
   footer {
     display: flex;
     column-gap: 0.5rem;
@@ -11,12 +11,18 @@ import Social from "./Social.astro";
     background-color: darkgrey;
     margin-top: auto;
   }
+  .socials-wrap {
+    display: flex;
+    column-gap: 1rem;
+  }
 </style>
 
 <footer>
   <div class="container">
-    <Social platform="twitter" username="astrodotbuild" />
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
+    <div class="socials-wrap">
+      <Social platform="twitter" username="astrodotbuild" />
+      <Social platform="github" username="withastro" />
+      <Social platform="youtube" username="astrodotbuild" />
+    </div>
   </div>
 </footer>
