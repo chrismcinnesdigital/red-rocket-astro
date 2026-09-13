@@ -1,5 +1,6 @@
 ---
-import GlobalNav from "../components/GlobalNav.astro";
+import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "Journal";
@@ -13,7 +14,7 @@ const pageTitle = "Journal";
 
   </head>
   <body>
-    <GlobalNav />
+    <Header />
 
     <h1>My Astro Learning Journal</h1>
     <p>This is where I will post about my journey learning Astro.</p>
@@ -22,5 +23,6 @@ const pageTitle = "Journal";
       <li><a href="/journal/journal-2/">Journal Post 2</a></li>
       <li><a href="/journal/journal-3/">Journal Post 3</a></li>
     </ul>
+    <Footer />
   </body>
 </html>

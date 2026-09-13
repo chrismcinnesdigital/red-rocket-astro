@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <style is:global>
@@ -13,7 +12,9 @@
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       background-color: lightgray;
-      transition: background-color 0.3s ease, color 0.3s ease; 
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
     }
     a:hover {
       background-color: grey;
@@ -22,8 +23,8 @@
   }
 </style>
 
-<div class="nav-wrapper">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/journal/">Journal</a>
+<div id="main-menu" class="nav-wrap">
+  <a class="nav-links" href="/">Home</a>
+  <a class="nav-links" href="/about/">About</a>
+  <a class="nav-links" href="/journal/">Journal</a>
 </div>
