@@ -1,0 +1,34 @@
+---
+const { url, title, image } = Astro.props;
+---
+
+<a href={url}>
+  <div class="card">
+    <img class="card-image" src={image} />
+    <h3 class="card-title">{title}</h3>
+  </div>
+</a>
+
+<style is:global>
+  a:has(.card) {
+    text-decoration: none;
+  }
+  .card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: lightgrey;
+    transition: opacity 300ms ease-in-out;
+  }
+  .card:hover {
+    opacity: 0.8;
+  }
+  h3.card-title {
+    margin: 0.5rem 0;
+  }
+  .card-image {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 3/2;
+  }
+</style>

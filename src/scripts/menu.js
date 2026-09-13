@@ -1,3 +1,4 @@
+// Mobile menu button
 const menu = document.querySelector('.menu');
 
 menu?.addEventListener('click', () => {
@@ -5,6 +6,7 @@ menu?.addEventListener('click', () => {
   menu.setAttribute('aria-expanded', `${!isExpanded}`);
 });
 
+// Style current menu link
 document.addEventListener("DOMContentLoaded", () => {
   const currentUrl = window.location.pathname;
   const navLinks = document.querySelectorAll("#main-nav a");
