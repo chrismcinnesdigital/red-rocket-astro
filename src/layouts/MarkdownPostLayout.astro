@@ -36,18 +36,24 @@ const { frontmatter } = Astro.props;
   }
   .tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
   }
   .tag {
-    font-size: .8rem;
+    font-size: .75rem;
     font-weight: 500;
-    text-decoration: none;
     text-transform: uppercase;
-    line-height: 1;
+    text-decoration: none;
     letter-spacing: .2ch;
-    background-color: red;
-    border-radius: 99px;
+    line-height: 1;
     padding: 6px 12px;
+    margin: 0;
+    border-radius: 99px;
     color: white;
+    background-color: oklab(62.8% 0.225 0.1258);
+    transition: background-color 300ms ease-in-out;
+  }
+  .tag:hover {
+    background-color: oklab(50.527% 0.18096 0.10123);
   }
 </style>

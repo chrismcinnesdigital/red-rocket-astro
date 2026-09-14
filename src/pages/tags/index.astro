@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Links from "../../components/Links.astro";
 
 const allPosts = Object.values(import.meta.glob("../journal/*.md", { eager: true }));
 const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
