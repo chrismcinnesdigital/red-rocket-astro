@@ -1,13 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const allPosts = Object.values(import.meta.glob("./journal/*.md", { eager: true }));
+const allPosts = await getCollection("blog");
 const pageTitle = "The Red Rocket Journal";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
   <div class="blog-list-wrap">
-    {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} description={post.frontmatter.description} image={post.frontmatter.image.url} altText={post.frontmatter.image.alt} />)}
+    {allPosts.map((post: any) => <BlogPost url={`/journal/${post.id}/`} title={post.data.title} description={post.data.description} image={post.data.image.url} altText={post.data.image.alt} />)}
   </div>
 </BaseLayout>

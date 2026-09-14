@@ -1,18 +1,24 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
+
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   {frontmatter.image.url && <img src={frontmatter.image.url} class="img-journal-head" alt={frontmatter.image.alt} />}
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <p>Written by {frontmatter.author}</p>
+  <p>{frontmatter.pubDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })}&nbsp;&nbsp;|&nbsp;&nbsp;Written by {frontmatter.author}</p>
 
   <div class="tags">
     {
       frontmatter.tags.map((tag: string) => (
         <p class="tag">
-          <a class="link-stealth" href={`/tags/${tag}`}>{tag}</a>
+          <a class="link-stealth" href={`/tags/${tag}`}>
+            {tag}
+          </a>
         </p>
       ))
     }
@@ -40,11 +46,11 @@ const { frontmatter } = Astro.props;
     gap: 8px;
   }
   .tag {
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: .2ch;
+    letter-spacing: 0.2ch;
     line-height: 1;
     padding: 6px 12px;
     margin: 0;
