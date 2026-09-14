@@ -1,19 +1,23 @@
 ---
-const { url, title, image } = Astro.props;
+const { url, title, description, image, altText } = Astro.props;
 ---
 
-<a href={url}>
-  <div class="card">
-    <img class="card-image" src={image} />
-    <h3 class="card-title">{title}</h3>
-  </div>
-</a>
+<div class="card">
+  <a href={url}>
+    <div class="card-inner">
+      {image ? <img class="card-image" src={image} alt={altText} /> : <div class="image-placeholder">{altText ? <p>{altText}</p> : <p>No Image</p>}</div>}
+      <h3 class="card-title">{title}</h3>
+      {description && <p class="description">{description}</p>}
+    </div>
+  </a>
+</div>
 
 <style is:global>
-  a:has(.card) {
+  .card a {
     text-decoration: none;
   }
   .card {
+    width: min(100%, 400px);
     padding: 1.5rem;
     border-radius: 8px;
     background-color: lightgrey;
@@ -30,5 +34,23 @@ const { url, title, image } = Astro.props;
     object-fit: cover;
     overflow: hidden;
     aspect-ratio: 3/2;
+  }
+  .image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-wrap: balance;
+    width: 100%;
+    aspect-ratio: 3/2;
+    padding: 2rem;
+    color: white;
+    background-color: gray;
+  }
+  .blog-list-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
   }
 </style>

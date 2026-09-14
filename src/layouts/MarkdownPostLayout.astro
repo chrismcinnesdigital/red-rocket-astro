@@ -4,15 +4,50 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <img src={frontmatter.image.url} class="img-journal-head" alt={frontmatter.image.alt} />
+  {frontmatter.image.url && <img src={frontmatter.image.url} class="img-journal-head" alt={frontmatter.image.alt} />}
   <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p>Written by {frontmatter.author}</p>
-  <slot />
+
+  <div class="tags">
+    {
+      frontmatter.tags.map((tag: string) => (
+        <p class="tag">
+          <a class="link-stealth" href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+
+  <div class="content-wrapper">
+    <slot />
+  </div>
 </BaseLayout>
-<style>
+
+<style is:global>
   .img-journal-head {
     width: 100%;
     height: 250px;
     object-fit: cover;
+  }
+  .content-wrapper p,
+  .content-wrapper ol,
+  .content-wrapper ul {
+    max-width: 90ch;
+  }
+  .tags {
+    display: flex;
+    gap: 8px;
+  }
+  .tag {
+    font-size: .8rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: .2ch;
+    background-color: red;
+    border-radius: 99px;
+    padding: 6px 12px;
+    color: white;
   }
 </style>
