@@ -42,3 +42,15 @@ a.link-stealth {
   text-decoration: none;
   color: inherit;
 }
+button {
+  background-color: oklab(59.785% 0.21041 0.11537);
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+}
+button:hover {
+  background-color: color-mix(in oklab, oklab(59.785% 0.21041 0.11537) 75%, oklab(20% 0 0));
+}
