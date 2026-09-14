@@ -34,7 +34,7 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
-h1.title-case {
+.text-capitalize {
   text-transform: capitalize;
 }
 

@@ -11,12 +11,12 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{pageTitle} – The Red Rocket</title>
   </head>
   <body>
     <Header />
     <div class="container">
-      <h1 class="title-case">{pageTitle}</h1>
+      <h1 class="text-capitalize">{pageTitle}</h1>
       <slot />
     </div>
     <Footer />
